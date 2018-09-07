@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=RSHCoin
+Comment=RSHCoin P2P Cryptocurrency
+Comment[fr]=RSHCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=RSHCoin, eşten eşe kriptografik sanal para birimi
+Exec=rshcoin-qt %u
+Terminal=false
+Type=Application
+Icon=rshcoin128
+MimeType=x-scheme-handler/rshcoin;
+Categories=Office;Finance;

@@ -1,0 +1,26 @@
+[Unit]
+Description=RSHCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=rshcoin
+Group=rshcoin
+
+Type=forking
+PIDFile=/var/lib/rshcoind/rshcoind.pid
+
+ExecStart=/usr/bin/rshcoind -daemon -pid=/var/lib/rshcoind/rshcoind.pid \
+          -conf=/etc/rshcoin/rshcoin.conf -datadir=/var/lib/rshcoind
+
+ExecStop=-/usr/bin/rshcoin-cli -conf=/etc/rshcoin/rshcoin.conf \
+         -datadir=/var/lib/rshcoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
